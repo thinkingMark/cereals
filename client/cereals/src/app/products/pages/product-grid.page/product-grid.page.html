@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-center mt-2">
+    <table class="table table-bordered w-60">
+        <tbody>
+            <tr class="row">
+                <th class="col-4" *ngFor="let product of products">
+                    <product [name]="product.name" [price]="product.price" [img]="product.img"></product>
+                </th>
+            </tr>
+    </table>
+</div>
