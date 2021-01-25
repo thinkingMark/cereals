@@ -1,16 +1,14 @@
-<div class="d-flex flex-column product-container justify-content-center">
-    <div class="d-flex justify-content-center align-items-center img-container">
+<div class="card card-body d-flex flex-column product-container justify-content-center">
+   <div class="d-flex justify-content-center align-items-center img-container py-2">
         <img src="{{ img }}" class="image">
     </div>
-    <div class="d-block">
+    <hr class="my-0">
+    <div class="card-header d-flex justify-content-between">
         <div class="">
-            <span>{{ name }}</span>
+            <span class="fs-15">{{ name }}</span>
         </div>
-        <div class="d-flex justify-content-between align-items-center">
-            <div><span class="fw-800 fs-25">{{ price }}</span><span class="fs-20"> грн</span></div>
-            <div>
-                    <i class="fa fa-shopping-basket"></i>
-            </div>
+        <div class="d-flex align-items-center ">
+            <div class="colored"><span class="fw-700 fs-30">{{ price }}</span><span class="fs-20">грн</span></div>
         </div>
     </div>
 </div>

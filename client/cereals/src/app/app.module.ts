@@ -7,6 +7,9 @@ import { ProductComponent } from './products/components/product.component/produc
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { fas, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

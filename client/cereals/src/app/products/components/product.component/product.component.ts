@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonSharedService } from '../../services/common-shared.service';
 
 @Component({
   selector: 'product',
@@ -8,18 +9,18 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class ProductComponent implements OnInit {
 
-  @Input()
-  name : string = ''; 
+  @Input()  name : string = ''; 
+  @Input()  price : number = 0;
+  @Input()  img : string = '';
+  @Input()  url : string = '';
 
-  @Input()
-  price : number = 0;
-  
-  @Input()
-  img : string = '';
-
-  constructor() { }
+  constructor(private commonSharedService : CommonSharedService) { }
 
   ngOnInit(): void {
+  }
+
+  redirectToDetailsPage(){
+    this.commonSharedService.redirectToPage(this.url);
   }
 
 }

@@ -1,15 +1,19 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
 body{
     margin: 0px;
+    font-family: 'Comfortaa', cursive;
 }
 
 header{
     width: 100%;
-    height: 6rem;
-    background-color: #FFAB73;
+    height: 5rem;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 span{
-    font-family: Roboto;
+    font-family: 'Comfortaa', cursive;
     font-size: 20px;
     font-weight: 500;
 }
@@ -93,7 +97,17 @@ span{
 .header-title{
     font-weight: 700;
     font-size: 2rem;
-    color: #593C28;
+    color: #f17a7e;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.header-font{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 2rem;  
 }
 
 .image{
@@ -101,15 +115,9 @@ span{
     max-height: 18rem;
 }
 
-
-.product-container{
-    height: 24rem;
-}
-
-
 .row{
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 
 .fs-11{
@@ -130,6 +138,9 @@ span{
 
 .fs-15{
     font-size: 15px;
+}
+.fs-16{
+    font-size: 16px;
 }
 .fs-17{
     font-size: 17px;
@@ -183,10 +194,54 @@ span{
     font-size: 30px;
 }
 
-.table-bordered {
-    border: 0px solid #dee2e6 !important;
-}
-
 .img-container{
     height: 20rem;
+}
+
+.btn-outline-primary {
+    color: #f17a7e !important;
+    border-color: #f17a7e !important;
+}
+
+.btn-outline-primary:hover {
+    color: #f17a7e !important;
+    background-color: #f17a7e !important;
+    border-color: #f17a7e !important;
+}
+
+.background-image{
+    //background-size: 100rem;
+    //background-image: url(https://i.imgur.com/OK2jQVa.png);
+}
+
+.card-body{
+    border-radius: 10px !important;
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
+
+.cereal-icon{
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: 0.5rem;
+    filter: invert(59%) sepia(25%) saturate(950%) hue-rotate(308deg) brightness(96%) contrast(96%);
+}
+
+.input-group-text{
+    border-radius: .25rem 0rem 0rem .25rem !important;
+}
+
+.card-body {
+    padding: 0rem !important;
+}
+
+.colored{
+    color: #f17a7e;
+}
+
+.custom-filter{
+    font-size: 1.4rem !important;
+}
+
+.ng-select.ng-select-single .ng-select-container {
+    height: 3rem;
 }
