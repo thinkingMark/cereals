@@ -1,0 +1,12 @@
+D:\C#\Hackaton\server\Cereals\Cereals\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\C#\Hackaton\server\Cereals\Cereals\bin\Debug\netcoreapp3.1\appsettings.json
+D:\C#\Hackaton\server\Cereals\Cereals\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\C#\Hackaton\server\Cereals\Cereals\bin\Debug\netcoreapp3.1\Cereals.exe
+D:\C#\Hackaton\server\Cereals\Cereals\obj\Debug\netcoreapp3.1\Cereals.csprojAssemblyReference.cache
+D:\C#\Hackaton\server\Cereals\Cereals\obj\Debug\netcoreapp3.1\Cereals.AssemblyInfoInputs.cache
+D:\C#\Hackaton\server\Cereals\Cereals\obj\Debug\netcoreapp3.1\Cereals.AssemblyInfo.cs
+D:\C#\Hackaton\server\Cereals\Cereals\obj\Debug\netcoreapp3.1\Cereals.RazorTargetAssemblyInfo.cache
+D:\C#\Hackaton\server\Cereals\Cereals\obj\Debug\netcoreapp3.1\staticwebassets\Cereals.StaticWebAssets.Manifest.cache
+D:\C#\Hackaton\server\Cereals\Cereals\obj\Debug\netcoreapp3.1\staticwebassets\Cereals.StaticWebAssets.xml
+D:\C#\Hackaton\server\Cereals\Cereals\bin\Debug\netcoreapp3.1\EWSoftware.PDI.dll
+D:\C#\Hackaton\server\Cereals\Cereals\obj\Debug\netcoreapp3.1\Cereals.csproj.CopyComplete
