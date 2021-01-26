@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BCIMIGBXoBHtmPSii3ouj9f6hT3sTWpgkkJpMQlMnkbIEKDxnRe5vpITlfFGrwn9Vt2OXSHlYvOo/EEDwNLFQQ==",
+  "dgSpecHash": "7GmCUsmL3+fjjJ1a3FUu6ezTswwBcUDzoMXyEKoFJBUV65vYUnFdywAHtWxNNR7R22aPgOKZfm4Xbbcv3RlaVg==",
   "success": true,
-  "projectFilePath": "D:\\C#\\Hackaton\\server\\Cereals\\Cereals\\Cereals.csproj",
+  "projectFilePath": "E:\\Project\\Cereals\\server\\Cereals\\Cereals\\Cereals.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\andri\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\markr\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

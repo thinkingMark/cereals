@@ -18,13 +18,13 @@ namespace Cereals.Controllers
             _productService = productService;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> GetData(string request)
+        [HttpPost("getProducts")]
+        public async Task<IActionResult> GetData([FromBody]string request)
         {
             try
             {
                 var data = _productService.GetData(request);
-                return new JsonResult(request);
+                return Ok(data);
             }
             catch(Exception e)
             {

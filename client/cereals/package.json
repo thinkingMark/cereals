@@ -28,6 +28,7 @@
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.20",
     "ngx-bootstrap": "^6.2.0",
+    "quoted-printable": "^1.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
