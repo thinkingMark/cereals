@@ -16,12 +16,12 @@ namespace Cereals.Services
     public class ProductService : IProductService
     {
         private readonly Urls urls;
-        private readonly Root request;
+        private readonly Root requestJosn;
 
         public ProductService(IOptions<Urls> options, IOptions<Root> req)
         {
             urls = options.Value;
-            request = req.Value;
+            requestJosn = req.Value;
         }
         public async Task<IEnumerable<Product>> GetData(string request)
         {
@@ -51,7 +51,8 @@ namespace Cereals.Services
                         Image = x["image_main"].ToString()
                     };
                 }).ToList());
-                data = await client.PostAsync(urls.SilpoUrl + request, new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json"));
+                requestJosn.data.customFilter = request;
+                data = await client.PostAsync(urls.SilpoUrl, new StringContent(JsonConvert.SerializeObject(requestJosn), Encoding.UTF8, "application/json"));
                 josn = JObject.Parse(data.Content.ReadAsStringAsync().GetAwaiter().GetResult());
                 goods.AddRange(josn["data"]["goods"].ToArray().Take(5).Select(x =>
                 {
