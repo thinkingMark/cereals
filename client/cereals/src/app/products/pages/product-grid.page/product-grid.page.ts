@@ -30,7 +30,8 @@ export class ProductGridPage implements OnInit {
 //   {name: "Крупа гречана", price: 1, img: 'https://i.imgur.com/KuXE6GE.jpg', url:'https://allo.ua/ru/products/mobile/poco-x3-6-128gb-shadow-gray.html'}, 
 //   {name: "Крупа гречана", price: 2000, img: 'https://i.imgur.com/FO6ZODd.jpg', url:'https://allo.ua/ru/products/mobile/poco-x3-6-128gb-shadow-gray.html'}
 // ];
-
+  products : any;
+  availableProducts : any;
 shops = [
   {name : "ATB"}, {name : "Ashan"}, {name : "Rozetka"},  
 ];
@@ -41,25 +42,32 @@ shops = [
   queryParams : any;
   searchTerm : string = '';
 
-  readonly defaultSelectedSortingMode = 2;
+  readonly defaultSelectedSortingMode = 3;
+  onSearchKeyUp: _.DebouncedFunc<($event: any) => void>;
 
   constructor(private route: ActivatedRoute,
               private commonSharedService : CommonSharedService) { 
     this.initSortingModes();
+    this.onSearchKeyUp = _.debounce(($event) => { this.onSearchTyped(); }, 200);
   }
 
   async ngOnInit(): Promise<void> {
     this.route.queryParams.subscribe(params => {
       this.queryParams = params;
     });
-    this.searchTerm = this.queryParams.searchTerm || '';
-    debugger
-    await this.commonSharedService.getData("this.searchTerm").subscribe((data) => {
-      this.data = data;
-      debugger
-    })
-    debugger
+    this.searchTerm = this.queryParams.searchTerm || 'Крупа гречана';
     this.refreshSortingMode();
+    this.refreshProducts();
+  }
+
+  refreshProducts(){
+    if(this.searchTerm !== ''){
+      this.commonSharedService.getData(this.searchTerm).subscribe((data) => {
+        debugger
+        this.availableProducts = data;
+        this.sortProducts();
+      })
+    }
   }
 
   initSortingModes(){
@@ -68,17 +76,30 @@ shops = [
         this.sortingModes.push({sortingProperty : p, sortingDirection : d, fullName: _.startCase(p) + " - " + _.startCase(d)});
       })
     });
+    debugger
     this.selectedSortingMode = this.sortingModes[this.defaultSelectedSortingMode];
   }
 
   async onSearchTyped(){
     this.updateQueryParams();
+    this.refreshProducts();
+  }
+
+  async sortProducts() {
+    this.updateQueryParams();
+    debugger
+    this.products = _.sortBy(Object.values(this.availableProducts), this.selectedSortingMode.sortingProperty)
+    if(this.selectedSortingMode.sortingDirection === SortingDirections.Descending){
+      this.products = this.products.reverse();
+    }
   }
 
   async refreshSortingMode(){
-    this.selectedSortingMode.sortingDirection = this.queryParams.sortingDirection
-    this.selectedSortingMode.sortingProperty = this.queryParams.sortingProperty
-    this.selectedSortingMode.fullName = _.startCase(this.selectedSortingMode.sortingProperty) + " - " + _.startCase(this.selectedSortingMode.sortingDirection);
+    if(this.queryParams.sortingDirection){
+      this.selectedSortingMode.sortingDirection = this.queryParams.sortingDirection
+      this.selectedSortingMode.sortingProperty = this.queryParams.sortingProperty
+      this.selectedSortingMode.fullName = _.startCase(this.selectedSortingMode.sortingProperty) + " - " + _.startCase(this.selectedSortingMode.sortingDirection);
+    }
   }
 
   updateQueryParams(){

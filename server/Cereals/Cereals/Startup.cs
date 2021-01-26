@@ -29,9 +29,11 @@ namespace Cereals
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+
             var Options = new Urls();
 
-            var ConfigurationSection = Configuration.GetSection("Usrls");
+            var ConfigurationSection = Configuration.GetSection("Urls");
 
             services.Configure<Urls>(ConfigurationSection);
 
@@ -45,9 +47,16 @@ namespace Cereals
 
             reqSection.Bind(req);
 
-            services.AddScoped<IProductService, ProductService>();
+            services.AddControllers();
 
-            services.AddCors(); // добавляем сервисы CORS
+            services.AddControllersWithViews()
+                    .AddNewtonsoftJson(options =>
+                        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
+            services.AddScoped<IProductService, ProductService>();
+            
+            services.AddCors(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

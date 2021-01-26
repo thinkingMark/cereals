@@ -2,12 +2,12 @@
     <div class="col-3 d-block justify-content-center mt-3">
         <div class="d-flex justify-content-center"><span class="title text-uppercase fs-25 mb-3 header-font colored">Filters:</span></div>
         <div class="input-group mb-3 ">
-            <input type="text" class="form-control custom-filter" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" (keyup)="onSearchTyped()"
+            <input type="text" class="form-control custom-filter" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" (keyup)="onSearchKeyUp()"
                 aria-describedby="search-icon">
         </div>
         <div>
             <ng-select name="taskCategoryId" [items]="sortingModes" bindLabel="fullName" class="celear-select"
-                [(ngModel)]="selectedSortingMode" [clearable]="false">
+                [(ngModel)]="selectedSortingMode" [clearable]="false" (change)="sortProducts()">
                 <span class="input-group-text" id="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
             </ng-select>
         </div>
@@ -18,8 +18,8 @@
                 <tbody>
                     <tr class="row">
                         <th class="col-4" *ngFor="let product of products">
-                            <product [name]="product.name" [price]="product.price" [img]="product.img"
-                                [url]="product.url"></product>
+                            <product [name]="product.name" [price]="product.price" [img]="product.image"
+                                [url]="product.productLink"></product>
                         </th>
                     </tr>
             </table>
